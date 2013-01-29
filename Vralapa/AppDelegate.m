@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "EEPalavra.h"
 
 @implementation AppDelegate
 
@@ -23,6 +24,32 @@
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    
+    EEPalavra *palavra = [EEPalavra palavraWithContext:[self managedObjectContext]];
+    [palavra setOriginal:@"mapa"];
+    [palavra setProdutoPrimos:[NSNumber numberWithInt:20]];
+//
+//    EEPalavra *palavra2 = [EEPalavra palavraWithContext:[self managedObjectContext]];
+//    [palavra2 setOriginal:@"zebra"];
+//    [palavra2 setProdutoPrimos:[NSNumber numberWithInt:17]];
+//    
+//    EEPalavra *palavra3 = [EEPalavra palavraWithContext:[self managedObjectContext]];
+//    [palavra3 setOriginal:@"mapa"];
+//    [palavra3 setProdutoPrimos:[NSNumber numberWithInt:2]];
+
+//    [self saveContext];
+    
+    
+    NSArray *palavras = [EEPalavra todasPalavrasCompativeisCom: palavra
+                                                    andContext: [self managedObjectContext]];
+    
+    for (EEPalavra *p in palavras) {
+        NSLog(@"PALAVRA MAROTA!!!!!!!: %@", [p original]);
+    }
+    
+
+    
     return YES;
 }
 
@@ -90,7 +117,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Vralapa" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Vrapala" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -103,7 +130,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Vralapa.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Vrapala.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

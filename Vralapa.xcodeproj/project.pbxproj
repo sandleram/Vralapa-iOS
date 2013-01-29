@@ -25,6 +25,7 @@
 		774C3CB816B7354600E35EC6 /* VralapaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 774C3CB716B7354600E35EC6 /* VralapaTests.m */; };
 		774C3CC316B7380D00E35EC6 /* Vrapala.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 774C3CC116B7380D00E35EC6 /* Vrapala.xcdatamodeld */; };
 		774C3CC516B73CCC00E35EC6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 774C3CC416B73CCC00E35EC6 /* CoreData.framework */; };
+		7757F88316B73FD800DAD8E4 /* EEPalavra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757F88216B73FD800DAD8E4 /* EEPalavra.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		774C3CB716B7354600E35EC6 /* VralapaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VralapaTests.m; sourceTree = "<group>"; };
 		774C3CC216B7380D00E35EC6 /* Vrapala.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vrapala.xcdatamodel; sourceTree = "<group>"; };
 		774C3CC416B73CCC00E35EC6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7757F88116B73FD800DAD8E4 /* EEPalavra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEPalavra.h; sourceTree = "<group>"; };
+		7757F88216B73FD800DAD8E4 /* EEPalavra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEPalavra.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,7 @@
 		774C3C8C16B7354600E35EC6 /* Vralapa */ = {
 			isa = PBXGroup;
 			children = (
+				7757F88516B73FDF00DAD8E4 /* Model */,
 				774C3C9516B7354600E35EC6 /* AppDelegate.h */,
 				774C3C9616B7354600E35EC6 /* AppDelegate.m */,
 				774C3C9E16B7354600E35EC6 /* ViewController.h */,
@@ -165,6 +169,15 @@
 				774C3CB316B7354600E35EC6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7757F88516B73FDF00DAD8E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7757F88116B73FD800DAD8E4 /* EEPalavra.h */,
+				7757F88216B73FD800DAD8E4 /* EEPalavra.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +294,7 @@
 				774C3C9716B7354600E35EC6 /* AppDelegate.m in Sources */,
 				774C3CA016B7354600E35EC6 /* ViewController.m in Sources */,
 				774C3CC316B7380D00E35EC6 /* Vrapala.xcdatamodeld in Sources */,
+				7757F88316B73FD800DAD8E4 /* EEPalavra.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +469,7 @@
 				774C3CBD16B7354600E35EC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		774C3CBE16B7354600E35EC6 /* Build configuration list for PBXNativeTarget "VralapaTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +478,7 @@
 				774C3CC016B7354600E35EC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
