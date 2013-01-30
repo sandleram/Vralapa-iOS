@@ -8,7 +8,6 @@
 
 #import "EEPalavra.h"
 
-
 @implementation EEPalavra
 
 @dynamic original;
@@ -30,19 +29,24 @@
 //    NSString *clause = [NSString stringWithFormat:@"produtoPrimos %% %d = 0",
 //                        [[palavra produtoPrimos] intValue]];
 //
-    NSExpression *campo = [NSExpression expressionForKeyPath:@"produtoPrimos"];
+//    NSExpression *campo = [NSExpression expressionForKeyPath:@"produtoPrimos"];
+//    
+//    NSString *clause = [NSString stringWithFormat:@"%d MOD(produtoPrimos) == 0",
+//                        [[palavra produtoPrimos] intValue]];
+//    
+//    NSExpression *exp = [NSExpression expressionWithFormat:clause
+//                                             argumentArray:
+//                         [NSArray arrayWithObject:campo]];
+//    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:clause];
     
-    NSString *clause = [NSString stringWithFormat:@"%d %% produtoPrimos == 0",
-                        [[palavra produtoPrimos] intValue]];
     
-    NSExpression *exp = [NSExpression expressionWithFormat:clause
-                                             argumentArray:
-                         [NSArray arrayWithObject:campo]];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:clause];
+//    [fetchRequest setPredicate:predicate];
     
     
-    [fetchRequest setPredicate:predicate];
+    
+//    }
+    
     
     return [context executeFetchRequest: fetchRequest error:nil];
 }

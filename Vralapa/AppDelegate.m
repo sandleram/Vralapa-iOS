@@ -10,6 +10,7 @@
 
 #import "ViewController.h"
 #import "EEPalavra.h"
+#import "SQLiteDatabase.h"
 
 @implementation AppDelegate
 
@@ -26,9 +27,9 @@
     [self.window makeKeyAndVisible];
     
     
-    EEPalavra *palavra = [EEPalavra palavraWithContext:[self managedObjectContext]];
-    [palavra setOriginal:@"mapa"];
-    [palavra setProdutoPrimos:[NSNumber numberWithInt:20]];
+//    EEPalavra *palavra = [EEPalavra palavraWithContext:[self managedObjectContext]];
+//    [palavra setOriginal:@"mapa"];
+//    [palavra setProdutoPrimos:[NSNumber numberWithInt:20]];
 //
 //    EEPalavra *palavra2 = [EEPalavra palavraWithContext:[self managedObjectContext]];
 //    [palavra2 setOriginal:@"zebra"];
@@ -37,20 +38,26 @@
 //    EEPalavra *palavra3 = [EEPalavra palavraWithContext:[self managedObjectContext]];
 //    [palavra3 setOriginal:@"mapa"];
 //    [palavra3 setProdutoPrimos:[NSNumber numberWithInt:2]];
-
+//
 //    [self saveContext];
     
     
-    NSArray *palavras = [EEPalavra todasPalavrasCompativeisCom: palavra
-                                                    andContext: [self managedObjectContext]];
+//    NSArray *palavras = [EEPalavra todasPalavrasCompativeisCom: palavra
+//                                                    andContext: [self managedObjectContext]];
     
-    for (EEPalavra *p in palavras) {
-        NSLog(@"PALAVRA MAROTA!!!!!!!: %@", [p original]);
-    }
-    
+//    for (EEPalavra *p in palavras) {
+//        NSLog(@"PALAVRA MAROTA!!!!!!!: %@", [p original]);
+//    }
+    SQLiteDatabase *database = [[SQLiteDatabase alloc] initWithPath:@"/Users/Vitor/Library/Application Support/iPhone Simulator/6.0/Applications/2EB18ACA-F99B-4E12-B7CA-138A33DA68A7/Documents/Vrapala.sqlite"];
+    NSArray *result = [database performQuery:@"SELECT ZORIGINAL FROM ZEEPALAVRA"];
+    for (NSArray *row in result) {
+        NSString *TOBA = [[row objectAtIndex:0] description];
+        //        NSString *address = [row objectAtIndex:5];
+        NSLog(@"%@", TOBA);
 
-    
+    }
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
