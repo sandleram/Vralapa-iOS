@@ -7,6 +7,8 @@
 //
 
 #import "EEPalavra.h"
+#import "SQLiteDatabase.h"
+#import "EEPrimos.h"
 
 @implementation EEPalavra
 
@@ -15,40 +17,33 @@
 @dynamic sanitizado;
 @dynamic tamanho;
 
-+(EEPalavra*) palavraWithContext:(NSManagedObjectContext*) context {
-    return [NSEntityDescription insertNewObjectForEntityForName:@"EEPalavra"
++(EEPalavra*) palavraComContext:(NSManagedObjectContext*) context eValor: (NSString*) palavra {
+    EEPalavra *nova =  [NSEntityDescription insertNewObjectForEntityForName:@"EEPalavra"
                                          inManagedObjectContext:context];
+    
+    [nova setOriginal:palavra];
+    
+    NSNumber *produtoDosPrimos = [EEPrimos produtoParaPalavra:palavra];
+    
+    [nova setProdutoPrimos:produtoDosPrimos];
+    
+    return nova;
+}
+
++(NSArray*) todasPalavrasCompativeisCom: (NSString*) palavra{
+    SQLiteDatabase *database = [[SQLiteDatabase alloc] init];
+    
+    NSNumber *produto = [EEPrimos produtoParaPalavra:palavra];
+    NSLog(@"PRODUTO CALCULADO: %@", [produto description]);
+    
+    NSString *busca = [NSString stringWithFormat:@"SELECT ZORIGINAL FROM ZEEPALAVRA WHERE %@ %% ZPRODUTOPRIMOS = 0", [produto description]];
+    
+    return [database performQuery:busca];
 }
 
 +(NSArray*) todasPalavrasCompativeisCom: (EEPalavra*) palavra andContext: (NSManagedObjectContext*) context{
-    NSFetchRequest *fetchRequest = [EEPalavra createFetch: context];
-    
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name='Jane'"];
-//    [fetchRequest setPredicate:predicate];
-    
-//    NSString *clause = [NSString stringWithFormat:@"produtoPrimos %% %d = 0",
-//                        [[palavra produtoPrimos] intValue]];
-//
-//    NSExpression *campo = [NSExpression expressionForKeyPath:@"produtoPrimos"];
-//    
-//    NSString *clause = [NSString stringWithFormat:@"%d MOD(produtoPrimos) == 0",
-//                        [[palavra produtoPrimos] intValue]];
-//    
-//    NSExpression *exp = [NSExpression expressionWithFormat:clause
-//                                             argumentArray:
-//                         [NSArray arrayWithObject:campo]];
-//    
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:clause];
-    
-    
-//    [fetchRequest setPredicate:predicate];
-    
-    
-    
-//    }
-    
-    
-    return [context executeFetchRequest: fetchRequest error:nil];
+
+    return nil;
 }
 
 +(NSFetchRequest*) createFetch:(NSManagedObjectContext*) context{

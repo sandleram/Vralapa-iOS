@@ -9,6 +9,16 @@
 #import "SQLiteDatabase.h"
 
 @implementation SQLiteDatabase
+
+
+-(id) init {
+    NSString *base = [[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] description];
+    
+    NSString *path =  [NSString stringWithFormat:@"%@Vrapala.sqlite", base];
+    
+    return [self initWithPath:path];
+}
+
 - (id)initWithPath:(NSString *)path {
     if (self = [super init]) {
         sqlite3 *dbConnection;

@@ -28,6 +28,7 @@
 		774C3CC316B7380D00E35EC6 /* Vrapala.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 774C3CC116B7380D00E35EC6 /* Vrapala.xcdatamodeld */; };
 		774C3CC516B73CCC00E35EC6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 774C3CC416B73CCC00E35EC6 /* CoreData.framework */; };
 		7757F88316B73FD800DAD8E4 /* EEPalavra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757F88216B73FD800DAD8E4 /* EEPalavra.m */; };
+		778CB8CF16C0986D00B58EB9 /* EEPrimos.m in Sources */ = {isa = PBXBuildFile; fileRef = 778CB8CE16C0986D00B58EB9 /* EEPrimos.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +54,7 @@
 		774C3C9216B7354600E35EC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		774C3C9416B7354600E35EC6 /* Vralapa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vralapa-Prefix.pch"; sourceTree = "<group>"; };
 		774C3C9516B7354600E35EC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		774C3C9616B7354600E35EC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		774C3C9616B7354600E35EC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../Vralapa/AppDelegate.m; sourceTree = "<group>"; };
 		774C3C9816B7354600E35EC6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		774C3C9A16B7354600E35EC6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		774C3C9C16B7354600E35EC6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -70,6 +71,8 @@
 		774C3CC416B73CCC00E35EC6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7757F88116B73FD800DAD8E4 /* EEPalavra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEPalavra.h; sourceTree = "<group>"; };
 		7757F88216B73FD800DAD8E4 /* EEPalavra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEPalavra.m; sourceTree = "<group>"; };
+		778CB8CD16C0986D00B58EB9 /* EEPrimos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEPrimos.h; sourceTree = "<group>"; };
+		778CB8CE16C0986D00B58EB9 /* EEPrimos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEPrimos.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +104,6 @@
 		774C3C7716B7354600E35EC6 = {
 			isa = PBXGroup;
 			children = (
-				4E8B477316B894BE000FCE70 /* libsqlite3.0.dylib */,
 				774C3C8C16B7354600E35EC6 /* Vralapa */,
 				774C3CB016B7354600E35EC6 /* VralapaTests */,
 				774C3C8516B7354600E35EC6 /* Frameworks */,
@@ -121,6 +123,7 @@
 		774C3C8516B7354600E35EC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E8B477316B894BE000FCE70 /* libsqlite3.0.dylib */,
 				774C3CC416B73CCC00E35EC6 /* CoreData.framework */,
 				774C3C8616B7354600E35EC6 /* UIKit.framework */,
 				774C3C8816B7354600E35EC6 /* Foundation.framework */,
@@ -135,7 +138,6 @@
 			children = (
 				7757F88516B73FDF00DAD8E4 /* Model */,
 				774C3C9516B7354600E35EC6 /* AppDelegate.h */,
-				774C3C9616B7354600E35EC6 /* AppDelegate.m */,
 				774C3C9E16B7354600E35EC6 /* ViewController.h */,
 				774C3C9F16B7354600E35EC6 /* ViewController.m */,
 				774C3CA116B7354600E35EC6 /* ViewController.xib */,
@@ -162,6 +164,7 @@
 		774C3CB016B7354600E35EC6 /* VralapaTests */ = {
 			isa = PBXGroup;
 			children = (
+				774C3C9616B7354600E35EC6 /* AppDelegate.m */,
 				774C3CB616B7354600E35EC6 /* VralapaTests.h */,
 				774C3CB716B7354600E35EC6 /* VralapaTests.m */,
 				774C3CB116B7354600E35EC6 /* Supporting Files */,
@@ -185,6 +188,8 @@
 				7757F88216B73FD800DAD8E4 /* EEPalavra.m */,
 				4E8B477616B894E3000FCE70 /* SQLiteDatabase.h */,
 				4E8B477716B894E3000FCE70 /* SQLiteDatabase.m */,
+				778CB8CD16C0986D00B58EB9 /* EEPrimos.h */,
+				778CB8CE16C0986D00B58EB9 /* EEPrimos.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				774C3CC316B7380D00E35EC6 /* Vrapala.xcdatamodeld in Sources */,
 				7757F88316B73FD800DAD8E4 /* EEPalavra.m in Sources */,
 				4E8B477816B894E3000FCE70 /* SQLiteDatabase.m in Sources */,
+				778CB8CF16C0986D00B58EB9 /* EEPrimos.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

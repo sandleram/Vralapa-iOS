@@ -10,7 +10,6 @@
 
 #import "ViewController.h"
 #import "EEPalavra.h"
-#import "SQLiteDatabase.h"
 
 @implementation AppDelegate
 
@@ -27,33 +26,18 @@
     [self.window makeKeyAndVisible];
     
     
-//    EEPalavra *palavra = [EEPalavra palavraWithContext:[self managedObjectContext]];
-//    [palavra setOriginal:@"mapa"];
-//    [palavra setProdutoPrimos:[NSNumber numberWithInt:20]];
-//
-//    EEPalavra *palavra2 = [EEPalavra palavraWithContext:[self managedObjectContext]];
-//    [palavra2 setOriginal:@"zebra"];
-//    [palavra2 setProdutoPrimos:[NSNumber numberWithInt:17]];
-//    
-//    EEPalavra *palavra3 = [EEPalavra palavraWithContext:[self managedObjectContext]];
-//    [palavra3 setOriginal:@"mapa"];
-//    [palavra3 setProdutoPrimos:[NSNumber numberWithInt:2]];
-//
+//    EEPalavra *palavra = [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"ema"];
+//    EEPalavra *palavra2 = [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"mapa"];
+//    EEPalavra *palavra3 = [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"zebra"];
+//    EEPalavra *palavra4 = [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"empada"];
 //    [self saveContext];
     
+    NSArray *result = [EEPalavra todasPalavrasCompativeisCom:@"empada"];
     
-//    NSArray *palavras = [EEPalavra todasPalavrasCompativeisCom: palavra
-//                                                    andContext: [self managedObjectContext]];
-    
-//    for (EEPalavra *p in palavras) {
-//        NSLog(@"PALAVRA MAROTA!!!!!!!: %@", [p original]);
-//    }
-    SQLiteDatabase *database = [[SQLiteDatabase alloc] initWithPath:@"/Users/Vitor/Library/Application Support/iPhone Simulator/6.0/Applications/2EB18ACA-F99B-4E12-B7CA-138A33DA68A7/Documents/Vrapala.sqlite"];
-    NSArray *result = [database performQuery:@"SELECT ZORIGINAL FROM ZEEPALAVRA"];
     for (NSArray *row in result) {
-        NSString *TOBA = [[row objectAtIndex:0] description];
-        //        NSString *address = [row objectAtIndex:5];
-        NSLog(@"%@", TOBA);
+        NSString *p = [[row objectAtIndex:0] description];
+
+        NSLog(@"%@", p);
 
     }
     return YES;
