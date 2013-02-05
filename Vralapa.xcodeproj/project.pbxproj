@@ -136,11 +136,10 @@
 		774C3C8C16B7354600E35EC6 /* Vralapa */ = {
 			isa = PBXGroup;
 			children = (
+				778CB91816C13DCF00B58EB9 /* Controllers */,
+				778CB91616C13CDB00B58EB9 /* Persistence */,
 				7757F88516B73FDF00DAD8E4 /* Model */,
 				774C3C9516B7354600E35EC6 /* AppDelegate.h */,
-				774C3C9E16B7354600E35EC6 /* ViewController.h */,
-				774C3C9F16B7354600E35EC6 /* ViewController.m */,
-				774C3CA116B7354600E35EC6 /* ViewController.xib */,
 				774C3C8D16B7354600E35EC6 /* Supporting Files */,
 			);
 			path = Vralapa;
@@ -186,12 +185,29 @@
 			children = (
 				7757F88116B73FD800DAD8E4 /* EEPalavra.h */,
 				7757F88216B73FD800DAD8E4 /* EEPalavra.m */,
-				4E8B477616B894E3000FCE70 /* SQLiteDatabase.h */,
-				4E8B477716B894E3000FCE70 /* SQLiteDatabase.m */,
 				778CB8CD16C0986D00B58EB9 /* EEPrimos.h */,
 				778CB8CE16C0986D00B58EB9 /* EEPrimos.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		778CB91616C13CDB00B58EB9 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				4E8B477616B894E3000FCE70 /* SQLiteDatabase.h */,
+				4E8B477716B894E3000FCE70 /* SQLiteDatabase.m */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
+		778CB91816C13DCF00B58EB9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				774C3C9E16B7354600E35EC6 /* ViewController.h */,
+				774C3C9F16B7354600E35EC6 /* ViewController.m */,
+				774C3CA116B7354600E35EC6 /* ViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -34,11 +34,16 @@
     SQLiteDatabase *database = [[SQLiteDatabase alloc] init];
     
     NSNumber *produto = [EEPrimos produtoParaPalavra:palavra];
-    NSLog(@"PRODUTO CALCULADO: %@", [produto description]);
     
-    NSString *busca = [NSString stringWithFormat:@"SELECT ZORIGINAL FROM ZEEPALAVRA WHERE %@ %% ZPRODUTOPRIMOS = 0", [produto description]];
+    NSString *busca = [NSString stringWithFormat:@"SELECT DISTINCT(ZORIGINAL) FROM ZEEPALAVRA WHERE %@ %% ZPRODUTOPRIMOS = 0", [produto description]];
     
-    return [database performQuery:busca];
+    NSArray *resultado = [database performQuery:busca];
+    
+    NSArray *palavras = [resultado map:^(id linha) {
+        return (id) [[linha objectAtIndex:0] description];
+    }];
+    
+    return palavras;
 }
 
 +(NSArray*) todasPalavrasCompativeisCom: (EEPalavra*) palavra andContext: (NSManagedObjectContext*) context{

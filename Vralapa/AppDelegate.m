@@ -33,13 +33,8 @@
 //    [self saveContext];
     
     NSArray *result = [EEPalavra todasPalavrasCompativeisCom:@"empada"];
-    
-    for (NSArray *row in result) {
-        NSString *p = [[row objectAtIndex:0] description];
+    NSLog(@"Resultado: %@", [result description]);
 
-        NSLog(@"%@", p);
-
-    }
     return YES;
     
 }
