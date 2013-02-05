@@ -54,7 +54,7 @@
 		774C3C9216B7354600E35EC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		774C3C9416B7354600E35EC6 /* Vralapa-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vralapa-Prefix.pch"; sourceTree = "<group>"; };
 		774C3C9516B7354600E35EC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		774C3C9616B7354600E35EC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../Vralapa/AppDelegate.m; sourceTree = "<group>"; };
+		774C3C9616B7354600E35EC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		774C3C9816B7354600E35EC6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		774C3C9A16B7354600E35EC6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		774C3C9C16B7354600E35EC6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -140,6 +140,7 @@
 				778CB91616C13CDB00B58EB9 /* Persistence */,
 				7757F88516B73FDF00DAD8E4 /* Model */,
 				774C3C9516B7354600E35EC6 /* AppDelegate.h */,
+				774C3C9616B7354600E35EC6 /* AppDelegate.m */,
 				774C3C8D16B7354600E35EC6 /* Supporting Files */,
 			);
 			path = Vralapa;
@@ -163,7 +164,6 @@
 		774C3CB016B7354600E35EC6 /* VralapaTests */ = {
 			isa = PBXGroup;
 			children = (
-				774C3C9616B7354600E35EC6 /* AppDelegate.m */,
 				774C3CB616B7354600E35EC6 /* VralapaTests.h */,
 				774C3CB716B7354600E35EC6 /* VralapaTests.m */,
 				774C3CB116B7354600E35EC6 /* Supporting Files */,

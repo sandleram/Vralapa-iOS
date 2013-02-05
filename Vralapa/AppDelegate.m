@@ -32,9 +32,12 @@
 //    EEPalavra *palavra4 = [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"empada"];
 //    [self saveContext];
     
-    NSArray *result = [EEPalavra todasPalavrasCompativeisCom:@"empada"];
+//    NSArray *result = [EEPalavra todasPalavrasCompativeisCom:@"empada"];
+    NSArray *result = [EEPalavra todasPalavrasCompativeisCom:@"empada" andContext:[self managedObjectContext]];
+    
     NSLog(@"Resultado: %@", [result description]);
 
+    
     return YES;
     
 }

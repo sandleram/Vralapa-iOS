@@ -35,7 +35,8 @@
     
     NSNumber *produto = [EEPrimos produtoParaPalavra:palavra];
     
-    NSString *busca = [NSString stringWithFormat:@"SELECT DISTINCT(ZORIGINAL) FROM ZEEPALAVRA WHERE %@ %% ZPRODUTOPRIMOS = 0", [produto description]];
+    NSString *busca = [NSString stringWithFormat:@"SELECT DISTINCT(ZORIGINAL) FROM ZEEPALAVRA WHERE %@ %% ZPRODUTOPRIMOS = 0",
+                       [produto description]];
     
     NSArray *resultado = [database performQuery:busca];
     
@@ -46,9 +47,22 @@
     return palavras;
 }
 
-+(NSArray*) todasPalavrasCompativeisCom: (EEPalavra*) palavra andContext: (NSManagedObjectContext*) context{
-
-    return nil;
++(NSArray*) todasPalavrasCompativeisCom: (NSString*) palavra andContext: (NSManagedObjectContext*) context{
+    NSNumber *produto = [EEPrimos produtoParaPalavra:palavra];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"modulus:by:(%@, produtoPrimos) == 0", [produto description]];
+    
+    NSFetchRequest *fetchRequest = [EEPalavra createFetch:context];
+    
+    [fetchRequest setPredicate:predicate];
+    
+    NSArray *resultado = [context executeFetchRequest: fetchRequest error:nil];
+    
+    NSArray *palavras = [resultado map:^(id linha) {
+        return (id) [linha original];
+    }];
+    
+    return palavras;
 }
 
 +(NSFetchRequest*) createFetch:(NSManagedObjectContext*) context{

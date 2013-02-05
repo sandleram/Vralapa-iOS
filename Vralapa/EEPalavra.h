@@ -20,7 +20,7 @@
 
 +(EEPalavra*) palavraComContext:(NSManagedObjectContext*) context eValor: (NSString*) palavra;
 
-+(NSArray*) todasPalavrasCompativeisCom: (EEPalavra*) palvra andContext: (NSManagedObjectContext*) context;
++(NSArray*) todasPalavrasCompativeisCom: (NSString*) palavra andContext: (NSManagedObjectContext*) context;
 
 +(NSArray*) todasPalavrasCompativeisCom: (NSString*) palavra;
 
