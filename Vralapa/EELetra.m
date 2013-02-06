@@ -13,8 +13,10 @@
 
 
 
--(id) initWithCaracter: (char) letra naView: (UIView*) view andX: (int) x andY: (int) y {
-    self = [super initWithFrame:(CGRectMake(x, y, 30, 30))];
+-(id) initWithCaracter: (char) letra naView: (UIView*) view andPosicao: (EEPosicao*) posicao {
+
+    
+    self = [super initWithFrame:(CGRectMake([posicao x], [posicao y], [posicao passo], [posicao passo]))];
 
     if (self) {
         [self setText: [NSString stringWithFormat:@"%c", letra]];
@@ -30,11 +32,11 @@
     return self;
 }
 
-+(NSArray*) colocaPalavra: (EEPalavra*) palavra naView: (UIView*) view aPartirDaCoordenada: (int) x eAbssissa: (int) y {
++(NSArray*) colocaPalavra: (EEPalavra*) palavra naView: (UIView*) view aPartirDaPosicao:(EEPosicao *)posicao {
     NSMutableArray *letras = [[NSMutableArray alloc] init];
     for (int i = 0; i< [[palavra original] length]; i++) {
         char caracter = [[palavra original] characterAtIndex:i];
-        [letras addObject: [[EELetra alloc] initWithCaracter:caracter naView:view andX:x+i*40 andY:y ] ];
+        [letras addObject: [[EELetra alloc] initWithCaracter:caracter naView:view andPosicao:[posicao deNumero:i]] ];
     }
     
     return letras;
@@ -46,13 +48,7 @@
     [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^(void) {
         [self setAlpha:1.0];
     }completion:^(BOOL finished) {
-//        if (finished) {
-//            [UIView animateWithDuration:1.5 delay:4 options:UIViewAnimationCurveLinear animations:^(void) {
-//                [self setAlpha: 0.0];
-//            } completion:^(BOOL finished) {
-//                NSLog(@"Rolou de boa!");
-//            }];
-//        }
+        [self setAlpha:1.0];        
     }];
 }
 

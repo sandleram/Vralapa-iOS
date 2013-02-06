@@ -8,14 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "EEPalavra.h"
+#import "EEPosicao.h"
 
 @interface EELetra : UILabel
 
+@property(nonatomic, strong) EEPosicao* posicao;
 
--(id) initWithCaracter: (char) letra naView: (UIView*) view andX: (int) x andY: (int) y;
+
+-(id) initWithCaracter: (char) letra naView: (UIView*) view andPosicao: (EEPosicao*) posicao;
 
 -(void) lidaComClique;
 
-+(NSArray*) colocaPalavra: (EEPalavra*) palavra naView: (UIView*) view aPartirDaCoordenada: (int) x eAbssissa: (int) y;
++(NSArray*) colocaPalavra: (EEPalavra*) palavra naView: (UIView*) view aPartirDaPosicao:(EEPosicao*) posicao;
 
 @end

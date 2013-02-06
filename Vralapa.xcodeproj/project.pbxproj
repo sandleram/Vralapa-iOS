@@ -28,6 +28,8 @@
 		7754E4C816C20D8B00833C49 /* EEPrimos.m in Sources */ = {isa = PBXBuildFile; fileRef = 7754E4C716C20D8B00833C49 /* EEPrimos.m */; };
 		7754E4E716C2200100833C49 /* EELetra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7754E4E616C2200100833C49 /* EELetra.m */; };
 		7757F88316B73FD800DAD8E4 /* EEPalavra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757F88216B73FD800DAD8E4 /* EEPalavra.m */; };
+		77AC3AD716C2498700085BF5 /* EETabuleiro.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AC3AD616C2498700085BF5 /* EETabuleiro.m */; };
+		77AC3ADB16C24A0B00085BF5 /* EEPosicao.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AC3ADA16C24A0B00085BF5 /* EEPosicao.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,10 @@
 		7754E4E616C2200100833C49 /* EELetra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EELetra.m; sourceTree = "<group>"; };
 		7757F88116B73FD800DAD8E4 /* EEPalavra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEPalavra.h; sourceTree = "<group>"; };
 		7757F88216B73FD800DAD8E4 /* EEPalavra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEPalavra.m; sourceTree = "<group>"; };
+		77AC3AD516C2498700085BF5 /* EETabuleiro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EETabuleiro.h; sourceTree = "<group>"; };
+		77AC3AD616C2498700085BF5 /* EETabuleiro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EETabuleiro.m; sourceTree = "<group>"; };
+		77AC3AD916C24A0B00085BF5 /* EEPosicao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEPosicao.h; sourceTree = "<group>"; };
+		77AC3ADA16C24A0B00085BF5 /* EEPosicao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEPosicao.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,10 @@
 				7754E4C716C20D8B00833C49 /* EEPrimos.m */,
 				7754E4E516C2200100833C49 /* EELetra.h */,
 				7754E4E616C2200100833C49 /* EELetra.m */,
+				77AC3AD516C2498700085BF5 /* EETabuleiro.h */,
+				77AC3AD616C2498700085BF5 /* EETabuleiro.m */,
+				77AC3AD916C24A0B00085BF5 /* EEPosicao.h */,
+				77AC3ADA16C24A0B00085BF5 /* EEPosicao.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -315,6 +325,8 @@
 				7757F88316B73FD800DAD8E4 /* EEPalavra.m in Sources */,
 				7754E4C816C20D8B00833C49 /* EEPrimos.m in Sources */,
 				7754E4E716C2200100833C49 /* EELetra.m in Sources */,
+				77AC3AD716C2498700085BF5 /* EETabuleiro.m in Sources */,
+				77AC3ADB16C24A0B00085BF5 /* EEPosicao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
