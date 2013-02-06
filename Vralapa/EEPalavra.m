@@ -35,7 +35,6 @@
         [label setTextAlignment:NSTextAlignmentCenter];
         [view addSubview:label];
     }
-    
 }
 
 +(NSArray*) todasPalavrasCompativeisCom: (NSString*) palavra andContext: (NSManagedObjectContext*) context{

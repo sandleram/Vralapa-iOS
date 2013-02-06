@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "EEPalavra.h"
+#import "EELetra.h"
 
 @interface ViewController ()
 
@@ -36,8 +37,7 @@
 
     for (int i =0; i<[compativeis count]; i++) {
         EEPalavra *palavra = [compativeis objectAtIndex:i];
-        
-        [palavra colocaNaView: [self view] aPartirDaCoordenada:20 eAbssissa:40*i];
+        [EELetra colocaPalavra:palavra naView:[self view] aPartirDaCoordenada:20 eAbssissa:40*i];
     }
 
     
