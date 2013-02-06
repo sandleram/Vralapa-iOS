@@ -21,13 +21,21 @@
     EEPalavra *nova =  [NSEntityDescription insertNewObjectForEntityForName:@"EEPalavra"
                                                      inManagedObjectContext:context];
     
-    [nova setOriginal:palavra];
-    
+    [nova setOriginal: [palavra uppercaseString]];
     NSNumber *produtoDosPrimos = [EEPrimos produtoParaPalavra:palavra];
-    
     [nova setProdutoPrimos:produtoDosPrimos];
     
     return nova;
+}
+
+-(void) colocaNaView: (UIView*) view aPartirDaCoordenada: (int) x eAbssissa: (int) y {
+    for (int i = 0; i< [[self original] length]; i++) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x+i*40, y, 30, 30)];
+        [label setText: [NSString stringWithFormat:@"%c", [[self original] characterAtIndex:i]]];
+        [label setTextAlignment:NSTextAlignmentCenter];
+        [view addSubview:label];
+    }
+    
 }
 
 +(NSArray*) todasPalavrasCompativeisCom: (NSString*) palavra andContext: (NSManagedObjectContext*) context{
@@ -43,11 +51,11 @@
     
     NSArray *resultado = [context executeFetchRequest: fetchRequest error:nil];
     
-    NSArray *palavras = [resultado map:^(id linha) {
-        return (id) [linha original];
-    }];
+//    NSArray *palavras = [resultado map:^(id linha) {
+//        return (id) [linha original];
+//    }];
     
-    return palavras;
+    return resultado;
 }
 
 +(NSFetchRequest*) createFetch:(NSManagedObjectContext*) context{

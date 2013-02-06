@@ -22,19 +22,24 @@
 {
     [super viewDidLoad];
     
-    //    [EEPalavra palavraComContext:[self context] eValor:@"empada"];
-    //    [EEPalavra palavraComContext:[self context] eValor:@"zica"];
-    //    [EEPalavra palavraComContext:[self context] eValor:@"zebra"];
-    //    [EEPalavra palavraComContext:[self context] eValor:@"nuca"];
-    //    [EEPalavra palavraComContext:[self context] eValor:@"mapa"];
-    //    [EEPalavra palavraComContext:[self context] eValor:@"ema"];
-    //    [EEPalavra palavraComContext:[self context] eValor:@"dado"];
-    //    [self saveManagedContext];
+//    [EEPalavra palavraComContext:[self context] eValor:@"empada"];
+//    [EEPalavra palavraComContext:[self context] eValor:@"zica"];
+//    [EEPalavra palavraComContext:[self context] eValor:@"zebra"];
+//    [EEPalavra palavraComContext:[self context] eValor:@"nuca"];
+//    [EEPalavra palavraComContext:[self context] eValor:@"mapa"];
+//    [EEPalavra palavraComContext:[self context] eValor:@"ema"];
+//    [EEPalavra palavraComContext:[self context] eValor:@"dado"];
+//    [self saveManagedContext];
     
 
     NSArray *compativeis = [EEPalavra todasPalavrasCompativeisCom:@"empada" andContext:[self context]];
-    
-    NSLog(@"COMPATIVEIS: %@", [compativeis description]);
+
+    for (int i =0; i<[compativeis count]; i++) {
+        EEPalavra *palavra = [compativeis objectAtIndex:i];
+        
+        [palavra colocaNaView: [self view] aPartirDaCoordenada:20 eAbssissa:40*i];
+    }
+
     
 }
 
