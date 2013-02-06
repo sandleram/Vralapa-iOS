@@ -40,21 +40,11 @@
 +(NSArray*) todasPalavrasCompativeisCom: (NSString*) palavra andContext: (NSManagedObjectContext*) context{
     NSNumber *produto = [EEPrimos produtoParaPalavra:palavra];
     
-    NSLog(@"PRODUTO: %@", [produto description]);
-    
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"modulus:by:(%@, produtoPrimos) == 0", [produto description]];
-    
     NSFetchRequest *fetchRequest = [EEPalavra createFetch:context];
-    
     [fetchRequest setPredicate:predicate];
     
-    NSArray *resultado = [context executeFetchRequest: fetchRequest error:nil];
-    
-//    NSArray *palavras = [resultado map:^(id linha) {
-//        return (id) [linha original];
-//    }];
-    
-    return resultado;
+    return [context executeFetchRequest: fetchRequest error:nil];
 }
 
 +(NSFetchRequest*) createFetch:(NSManagedObjectContext*) context{

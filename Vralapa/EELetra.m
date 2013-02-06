@@ -20,29 +20,40 @@
         [self setText: [NSString stringWithFormat:@"%c", letra]];
         [self setTextAlignment:NSTextAlignmentCenter];
         [view addSubview:self];
+        
+        UITapGestureRecognizer *onTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(lidaComClique)];
+        [onTap setNumberOfTapsRequired:1];
+        
+        [self addGestureRecognizer:onTap];
+        [self setUserInteractionEnabled:YES];
     }
     return self;
 }
 
-
-
-+(void) colocaPalavra: (EEPalavra*) palavra naView: (UIView*) view aPartirDaCoordenada: (int) x eAbssissa: (int) y {
-    
++(NSArray*) colocaPalavra: (EEPalavra*) palavra naView: (UIView*) view aPartirDaCoordenada: (int) x eAbssissa: (int) y {
+    NSMutableArray *letras = [[NSMutableArray alloc] init];
     for (int i = 0; i< [[palavra original] length]; i++) {
         char caracter = [[palavra original] characterAtIndex:i];
-        EELetra *letra = [[EELetra alloc] initWithCaracter:caracter naView:view andX:x+i*40 andY:y ];
-        
-        UITapGestureRecognizer *onTap = [[UITapGestureRecognizer alloc] initWithTarget:letra action:@selector(lidaComClique)];
-        [onTap setNumberOfTapsRequired:1];
-        
-        [letra addGestureRecognizer:onTap];
-        [letra setUserInteractionEnabled:YES];
+        [letras addObject: [[EELetra alloc] initWithCaracter:caracter naView:view andX:x+i*40 andY:y ] ];
     }
     
+    return letras;
 }
 
 -(void) lidaComClique {
-    NSLog(@"Clicado em: %@", [self text]);
+    [self setAlpha: 0.0];
+    
+    [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^(void) {
+        [self setAlpha:1.0];
+    }completion:^(BOOL finished) {
+//        if (finished) {
+//            [UIView animateWithDuration:1.5 delay:4 options:UIViewAnimationCurveLinear animations:^(void) {
+//                [self setAlpha: 0.0];
+//            } completion:^(BOOL finished) {
+//                NSLog(@"Rolou de boa!");
+//            }];
+//        }
+    }];
 }
 
 @end

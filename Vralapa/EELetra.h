@@ -16,6 +16,6 @@
 
 -(void) lidaComClique;
 
-+(void) colocaPalavra: (EEPalavra*) palavra naView: (UIView*) view aPartirDaCoordenada: (int) x eAbssissa: (int) y;
++(NSArray*) colocaPalavra: (EEPalavra*) palavra naView: (UIView*) view aPartirDaCoordenada: (int) x eAbssissa: (int) y;
 
 @end
