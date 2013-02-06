@@ -10,4 +10,7 @@
 
 @interface ViewController : UIViewController
 
+@property(strong, nonatomic) NSArray* todasJogagas;
+@property(strong, nonatomic) NSString* palavraAtual;
+
 @end

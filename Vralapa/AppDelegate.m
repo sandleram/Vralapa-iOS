@@ -25,18 +25,6 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"empada"];
-//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"zica"];
-//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"zebra"];
-//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"nuca"];
-//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"mapa"];
-//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"ema"];
-//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"dado"];
-//    [self saveContext];
-    
-    NSArray *compativeis = [EEPalavra todasPalavrasCompativeisCom:@"empada" andContext:[self managedObjectContext]];
-
-    NSLog(@"COMPATIVEIS: %@", [compativeis description]);
     
     return YES;
 }

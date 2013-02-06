@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
+#import "EEPalavra.h"
 
 @interface ViewController ()
 
@@ -14,10 +16,26 @@
 
 @implementation ViewController
 
+@synthesize todasJogagas, palavraAtual;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    //    [EEPalavra palavraComContext:[self context] eValor:@"empada"];
+    //    [EEPalavra palavraComContext:[self context] eValor:@"zica"];
+    //    [EEPalavra palavraComContext:[self context] eValor:@"zebra"];
+    //    [EEPalavra palavraComContext:[self context] eValor:@"nuca"];
+    //    [EEPalavra palavraComContext:[self context] eValor:@"mapa"];
+    //    [EEPalavra palavraComContext:[self context] eValor:@"ema"];
+    //    [EEPalavra palavraComContext:[self context] eValor:@"dado"];
+    //    [self saveManagedContext];
+    
+
+    NSArray *compativeis = [EEPalavra todasPalavrasCompativeisCom:@"empada" andContext:[self context]];
+    
+    NSLog(@"COMPATIVEIS: %@", [compativeis description]);
+    
 }
 
 - (void)didReceiveMemoryWarning

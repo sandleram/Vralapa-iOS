@@ -14,6 +14,33 @@
     #import <CoreData/CoreData.h>
 #endif
 
+#import "AppDelegate.h"
+
+@interface UIViewController (WithContextAcess)
+
+-(NSManagedObjectContext*) context;
+
+-(void) saveManagedContext;
+
+@end
+
+@implementation UIViewController (WithContextAcess)
+
+-(NSManagedObjectContext*) context {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    return [delegate managedObjectContext];
+}
+
+-(void) saveManagedContext {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    [delegate saveContext];
+}
+
+@end
+
+
 @interface NSArray (WithFunctionalMethods)
 
 -(NSArray *)map:(id (^)(id obj))block;
