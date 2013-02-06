@@ -17,9 +17,9 @@
 @property (nonatomic, retain) NSString * sanitizado;
 @property (nonatomic, retain) NSNumber * tamanho;
 
-+(EEPalavra*) palavraWithContext:(NSManagedObjectContext*) context;
++(EEPalavra*) palavraComContext:(NSManagedObjectContext*) context eValor: (NSString*) palavra;
 
-+(NSArray*) todasPalavrasCompativeisCom: (EEPalavra*) palvra andContext: (NSManagedObjectContext*) context;
++(NSArray*) todasPalavrasCompativeisCom: (NSString*) palavra andContext: (NSManagedObjectContext*) context;
 
 
 

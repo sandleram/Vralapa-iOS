@@ -7,6 +7,7 @@
 //
 
 #import "EEPalavra.h"
+#import "EEPrimos.h"
 
 
 @implementation EEPalavra
@@ -16,35 +17,37 @@
 @dynamic sanitizado;
 @dynamic tamanho;
 
-+(EEPalavra*) palavraWithContext:(NSManagedObjectContext*) context {
-    return [NSEntityDescription insertNewObjectForEntityForName:@"EEPalavra"
-                                         inManagedObjectContext:context];
++(EEPalavra*) palavraComContext:(NSManagedObjectContext*) context eValor: (NSString*) palavra {
+    EEPalavra *nova =  [NSEntityDescription insertNewObjectForEntityForName:@"EEPalavra"
+                                                     inManagedObjectContext:context];
+    
+    [nova setOriginal:palavra];
+    
+    NSNumber *produtoDosPrimos = [EEPrimos produtoParaPalavra:palavra];
+    
+    [nova setProdutoPrimos:produtoDosPrimos];
+    
+    return nova;
 }
 
-+(NSArray*) todasPalavrasCompativeisCom: (EEPalavra*) palavra andContext: (NSManagedObjectContext*) context{
-    NSFetchRequest *fetchRequest = [EEPalavra createFetch: context];
++(NSArray*) todasPalavrasCompativeisCom: (NSString*) palavra andContext: (NSManagedObjectContext*) context{
+    NSNumber *produto = [EEPrimos produtoParaPalavra:palavra];
     
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name='Jane'"];
-//    [fetchRequest setPredicate:predicate];
+    NSLog(@"PRODUTO: %@", [produto description]);
     
-//    NSString *clause = [NSString stringWithFormat:@"produtoPrimos %% %d = 0",
-//                        [[palavra produtoPrimos] intValue]];
-//
-    NSExpression *campo = [NSExpression expressionForKeyPath:@"produtoPrimos"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"modulus:by:(%@, produtoPrimos) == 0", [produto description]];
     
-    NSString *clause = [NSString stringWithFormat:@"%d %% produtoPrimos == 0",
-                        [[palavra produtoPrimos] intValue]];
-    
-    NSExpression *exp = [NSExpression expressionWithFormat:clause
-                                             argumentArray:
-                         [NSArray arrayWithObject:campo]];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:clause];
-    
+    NSFetchRequest *fetchRequest = [EEPalavra createFetch:context];
     
     [fetchRequest setPredicate:predicate];
     
-    return [context executeFetchRequest: fetchRequest error:nil];
+    NSArray *resultado = [context executeFetchRequest: fetchRequest error:nil];
+    
+    NSArray *palavras = [resultado map:^(id linha) {
+        return (id) [linha original];
+    }];
+    
+    return palavras;
 }
 
 +(NSFetchRequest*) createFetch:(NSManagedObjectContext*) context{

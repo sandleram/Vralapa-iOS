@@ -25,30 +25,18 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-    
-    EEPalavra *palavra = [EEPalavra palavraWithContext:[self managedObjectContext]];
-    [palavra setOriginal:@"mapa"];
-    [palavra setProdutoPrimos:[NSNumber numberWithInt:20]];
-//
-//    EEPalavra *palavra2 = [EEPalavra palavraWithContext:[self managedObjectContext]];
-//    [palavra2 setOriginal:@"zebra"];
-//    [palavra2 setProdutoPrimos:[NSNumber numberWithInt:17]];
-//    
-//    EEPalavra *palavra3 = [EEPalavra palavraWithContext:[self managedObjectContext]];
-//    [palavra3 setOriginal:@"mapa"];
-//    [palavra3 setProdutoPrimos:[NSNumber numberWithInt:2]];
-
+//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"empada"];
+//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"zica"];
+//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"zebra"];
+//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"nuca"];
+//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"mapa"];
+//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"ema"];
+//    [EEPalavra palavraComContext:[self managedObjectContext] eValor:@"dado"];
 //    [self saveContext];
     
-    
-    NSArray *palavras = [EEPalavra todasPalavrasCompativeisCom: palavra
-                                                    andContext: [self managedObjectContext]];
-    
-    for (EEPalavra *p in palavras) {
-        NSLog(@"PALAVRA MAROTA!!!!!!!: %@", [p original]);
-    }
-    
+    NSArray *compativeis = [EEPalavra todasPalavrasCompativeisCom:@"empada" andContext:[self managedObjectContext]];
 
+    NSLog(@"COMPATIVEIS: %@", [compativeis description]);
     
     return YES;
 }

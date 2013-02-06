@@ -13,3 +13,29 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
 #endif
+
+@interface NSArray (WithFunctionalMethods)
+
+-(NSArray *)map:(id (^)(id obj))block;
+-(NSArray *)filter:(BOOL (^)(id obj))block;
+
+@end
+
+@implementation NSArray (WithFunctionalMethods)
+
+-(NSArray *)map:(id (^)(id obj))block;
+{
+    NSMutableArray *newArray = [NSMutableArray arrayWithCapacity:self.count];
+    for ( id obj in self ) [newArray addObject:block(obj)];
+    return newArray;
+}
+
+-(NSArray *)filter:(BOOL (^)(id obj))block {
+    NSMutableArray *newArray = [[NSMutableArray alloc] init];
+    for ( id obj in self ) {
+        if (block(obj)) [newArray addObject:obj];
+    }
+    return newArray;
+}
+
+@end
