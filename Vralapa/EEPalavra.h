@@ -21,6 +21,8 @@
 
 +(NSArray*) todasPalavrasCompativeisCom: (NSString*) palavra andContext: (NSManagedObjectContext*) context;
 
++(BOOL) semPalavrasSalvasNoContext: (NSManagedObjectContext*)  context;
+
 -(void) colocaNaView: (UIView*) view aPartirDaCoordenada: (int) x eAbssissa: (int) y;
 
 @end

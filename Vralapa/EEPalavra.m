@@ -37,6 +37,13 @@
     }
 }
 
++(BOOL) semPalavrasSalvasNoContext: (NSManagedObjectContext*)  context {
+    NSFetchRequest *fetchRequest = [EEPalavra createFetch:context];
+    [fetchRequest setFetchLimit:1];
+    
+    return [[context executeFetchRequest: fetchRequest error:nil] count] <= 0 ;
+}
+
 +(NSArray*) todasPalavrasCompativeisCom: (NSString*) palavra andContext: (NSManagedObjectContext*) context{
     NSNumber *produto = [EEPrimos produtoParaPalavra:palavra];
     

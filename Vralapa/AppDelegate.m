@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
-#import "EEPalavra.h"
+#import "EEConfiguracaoInicial.h"
 
 @implementation AppDelegate
 
@@ -24,7 +24,9 @@
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-    
+
+    EEConfiguracaoInicial *conf = [[EEConfiguracaoInicial alloc] initWithApplication:self];
+    [conf populaBancoSeNecessario];
     
     return YES;
 }

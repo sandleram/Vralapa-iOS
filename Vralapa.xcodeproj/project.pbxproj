@@ -28,6 +28,8 @@
 		7754E4C816C20D8B00833C49 /* EEPrimos.m in Sources */ = {isa = PBXBuildFile; fileRef = 7754E4C716C20D8B00833C49 /* EEPrimos.m */; };
 		7754E4E716C2200100833C49 /* EELetra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7754E4E616C2200100833C49 /* EELetra.m */; };
 		7757F88316B73FD800DAD8E4 /* EEPalavra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7757F88216B73FD800DAD8E4 /* EEPalavra.m */; };
+		775A871E16CFC9200083EDBD /* palavras.txt in Resources */ = {isa = PBXBuildFile; fileRef = 775A871D16CFC9200083EDBD /* palavras.txt */; };
+		775A873216D0455F0083EDBD /* EEConfiguracaoInicial.m in Sources */ = {isa = PBXBuildFile; fileRef = 775A873116D0455F0083EDBD /* EEConfiguracaoInicial.m */; };
 		77AC3AD716C2498700085BF5 /* EETabuleiro.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AC3AD616C2498700085BF5 /* EETabuleiro.m */; };
 		77AC3ADB16C24A0B00085BF5 /* EEPosicao.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AC3ADA16C24A0B00085BF5 /* EEPosicao.m */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,9 @@
 		7754E4E616C2200100833C49 /* EELetra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EELetra.m; sourceTree = "<group>"; };
 		7757F88116B73FD800DAD8E4 /* EEPalavra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEPalavra.h; sourceTree = "<group>"; };
 		7757F88216B73FD800DAD8E4 /* EEPalavra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEPalavra.m; sourceTree = "<group>"; };
+		775A871D16CFC9200083EDBD /* palavras.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = palavras.txt; sourceTree = "<group>"; };
+		775A873016D0455F0083EDBD /* EEConfiguracaoInicial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEConfiguracaoInicial.h; sourceTree = "<group>"; };
+		775A873116D0455F0083EDBD /* EEConfiguracaoInicial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEConfiguracaoInicial.m; sourceTree = "<group>"; };
 		77AC3AD516C2498700085BF5 /* EETabuleiro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EETabuleiro.h; sourceTree = "<group>"; };
 		77AC3AD616C2498700085BF5 /* EETabuleiro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EETabuleiro.m; sourceTree = "<group>"; };
 		77AC3AD916C24A0B00085BF5 /* EEPosicao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEPosicao.h; sourceTree = "<group>"; };
@@ -143,6 +148,8 @@
 				774C3C9516B7354600E35EC6 /* AppDelegate.h */,
 				774C3C9616B7354600E35EC6 /* AppDelegate.m */,
 				774C3C8D16B7354600E35EC6 /* Supporting Files */,
+				775A873016D0455F0083EDBD /* EEConfiguracaoInicial.h */,
+				775A873116D0455F0083EDBD /* EEConfiguracaoInicial.m */,
 			);
 			path = Vralapa;
 			sourceTree = "<group>";
@@ -150,6 +157,7 @@
 		774C3C8D16B7354600E35EC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				775A871D16CFC9200083EDBD /* palavras.txt */,
 				774C3CC116B7380D00E35EC6 /* Vrapala.xcdatamodeld */,
 				774C3C8E16B7354600E35EC6 /* Vralapa-Info.plist */,
 				774C3C8F16B7354600E35EC6 /* InfoPlist.strings */,
@@ -284,6 +292,7 @@
 				774C3C9B16B7354600E35EC6 /* Default@2x.png in Resources */,
 				774C3C9D16B7354600E35EC6 /* Default-568h@2x.png in Resources */,
 				774C3CA316B7354600E35EC6 /* ViewController.xib in Resources */,
+				775A871E16CFC9200083EDBD /* palavras.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +336,7 @@
 				7754E4E716C2200100833C49 /* EELetra.m in Sources */,
 				77AC3AD716C2498700085BF5 /* EETabuleiro.m in Sources */,
 				77AC3ADB16C24A0B00085BF5 /* EEPosicao.m in Sources */,
+				775A873216D0455F0083EDBD /* EEConfiguracaoInicial.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

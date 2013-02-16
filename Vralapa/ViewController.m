@@ -23,16 +23,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    [EEPalavra palavraComContext:[self context] eValor:@"empada"];
-//    [EEPalavra palavraComContext:[self context] eValor:@"zica"];
-//    [EEPalavra palavraComContext:[self context] eValor:@"zebra"];
-//    [EEPalavra palavraComContext:[self context] eValor:@"nuca"];
-//    [EEPalavra palavraComContext:[self context] eValor:@"mapa"];
-//    [EEPalavra palavraComContext:[self context] eValor:@"ema"];
-//    [EEPalavra palavraComContext:[self context] eValor:@"dado"];
-//    [self saveManagedContext];
-    
 
     NSArray *compativeis = [EEPalavra todasPalavrasCompativeisCom:@"empada" andContext:[self context]];
 
